@@ -50,25 +50,108 @@
     </section>
     <section id="implementation">
       <h2>Implementation</h2>
-      <p>Details about the implementation.</p>
+      <p> For explanation of the classes and function we created and used, see <a href="http://www.google.com" target="_blank">Code Documentation</a>. </p>
+      <p>The implementation of the <strong>WordStream-Extension</strong> project involved several key components, including data acquisition and preprocessing, extending the existing WordStream visualization, and enhancing interactivity using D3.js. Below is a detailed overview of each aspect:</p>
+      
+      <h3>Data Acquisition and Preprocessing</h3>
+      <p>We integrated three new datasets into WordStream: Rotten Tomatoes movie reviews, CNN news articles, and Reddit posts from the /datasets subreddit. The preprocessing pipeline for these datasets included:</p>
+      <ul>
+        <li><strong>Data Collection:</strong> Acquired datasets from trusted sources, ensuring a diverse range of text corpora.</li>
+        <li><strong>Data Cleaning:</strong> Performed text normalization, including lowercasing, removal of special characters, and handling of missing values to ensure consistency across datasets.</li>
+        <li><strong>Keyword Extraction:</strong> Utilized the <a href="https://spacy.io/" target="_blank">SpaCy</a> library in Python to extract relevant keywords from each dataset, enhancing the quality of the visualization.</li>
+        <li><strong>Sentiment Analysis:</strong> Applied the <a href="https://github.com/cjhutto/vaderSentiment" target="_blank">VADER Sentiment Analyzer</a> to compute sentiment scores for each text entry, categorizing sentiments as positive, neutral, or negative.</li>
+        <li><strong>Additional data Transformation:</strong> Necessary to visualize the data in the new visualization we built. The data was aggregated data by year, calculating the average sentiment per text and the frequency of each keyword annually to facilitate temporal analysis.</li>
+      </ul>
+      <p>Other datasets containing data such as social media posts and fact-check articles were added. However, due to reasons that we were not able to understand, these datasets proved to be difficult to visualize in the WordStream. In order not to waste the effor invested in these datasets, they are only visualizible in the WordSentiment and SentimentStream tabs.</p>
+      
+      <h3>Extending the WordStream Visualization</h3>
+      <p>Building upon the original WordStream tool, we introduced two new visualization tabs: <strong>WordSentiment</strong> and <strong>SentimentStream</strong>.</p>
+      
+      <h4>WordSentiment Tab</h4>
+      <p>The <em>WordSentiment</em> tab features an interactive word cloud that visualizes the sentiment associated with different keywords. Key functionalities include:</p>
+      <ul>
+        <li><strong>Sentiment-Based Coloring:</strong> Words are color-coded based on sentiment scores—red for negative, blue for positive, and yellow for neutral.</li>
+        <li><strong>Dataset and Category Selection:</strong> Users can select from multiple datasets and categories (e.g., person, organization, country) via dropdown menus to customize the visualization.</li>
+        <li><strong>Threshold Sliders:</strong> Two sliders allow users to adjust sentiment score thresholds, enabling fine-tuning of what constitutes positive and negative sentiments.</li>
+      </ul>
+      
+      <h4>SentimentStream Tab</h4>
+      <p>The <em>SentimentStream</em> tab integrates temporal analysis with sentiment visualization, offering deeper insights into sentiment evolution over time. Features include:</p>
+      <ul>
+        <li><strong>Temporal Word Clouds:</strong> For each selected year, dual word clouds display positive and negative sentiments separately, allowing users to observe sentiment trends over time.</li>
+        <li><strong>Interactive Lines:</strong> Clicking on a word reveals a line chart depicting the evolution of that word's sentiment across different years.</li>
+        <!-- <li><strong>Composable Categories:</strong> Users can select multiple categories to compare sentiment trends across different groups simultaneously.</li> -->
+      </ul>
+      
+      <h3>Enhancing Interactivity with D3.js</h3>
+      <p>To improve user engagement and interactivity, we leveraged D3.js to implement the following:</p>
+      <ul>
+        <li><strong>Dynamic Sliders:</strong> Interactive sliders for sentiment thresholds and word ranking allow real-time updates to the visualization based on user input.</li>
+        <li><strong>Diverging Color Schemes:</strong> Transitioned from categorical to diverging color schemes to better represent the spectrum of sentiments.</li>
+        <!-- <li><strong>Responsive Design:</strong> Ensured that the visualization adapts seamlessly to different screen sizes and devices, enhancing accessibility.</li> -->
+        <!-- <li><strong>Interactive Legends:</strong> Added clickable legends to allow users to toggle the visibility of specific sentiments or categories.</li> -->
+      </ul>
+
     </section>
     <section id="program">
       <h2>Program</h2>
-      <p> To run the program, open the command line, navigate to the program folder, and use a simple server, e.g.:</p>
-        <pre><code>python -m http.server 8000</code></pre>
-        <h3>Additional datasets</h3>
-        <p>We enriched the original WordStream with several new datasets: </p>
-        <ul>
-          <li>Rotten Tomatoes movie reviews</li>
-          <li>CNN News articles</li>
-          <li>Reddit posts</li>
-        </ul>
-        <p> ... explain content of the datasets, preprocessing, etc. </p>
+      <p>To deploy and interact with the WordStream-Extension, follow the steps below:</p>
+      
+      <h3>Running the Application</h3>
+      <p>Ensure you have Python installed on your Windows machine. Then, execute the following commands:</p>
+      <pre><code>python -m http.server 8000</code></pre>
+      <p>This command starts a simple HTTP server on port 8000. Navigate to <a href="http://localhost:8000" target="_blank">http://localhost:8000</a> in your web browser to access the application.</p>
+      
+      <h3>Additional Datasets</h3>
+      <p>We expanded the original WordStream with several new datasets to enhance analysis capabilities:</p>
+      <ul>
+        <li>Rotten Tomatoes Movie Reviews</li>
+        <li>CNN News Articles</li>
+        <li>Reddit Posts from the /datasets Subreddit</li>
+      </ul>
+      <p>Each dataset underwent extensive preprocessing, including data cleaning, keyword extraction with SpaCy, sentiment analysis using VADER, and aggregation by year to facilitate temporal visualization.</p>
+      <ul>
+        <li><strong>Data Cleaning:</strong> Standardized text formats and removed inconsistencies.</li>
+        <li><strong>Keyword Extraction:</strong> Identified significant terms to be visualized.</li>
+        <li><strong>Sentiment Analysis:</strong> Calculated sentiment scores to categorize words by sentiment.</li>
+        <li><strong>Data Aggregation:</strong> Compiled yearly sentiment averages and keyword frequencies.</li>
+      </ul>
+      
       <h3>WordSentiment Tab</h3>
-      <p> ... </p>
+      <p>The <em>WordSentiment</em> tab offers an interactive word cloud that visualizes sentiment scores:</p>
+      <ul>
+        <li><strong>Color-Coded Words:</strong> Red indicates negative sentiment, blue indicates positive sentiment.</li>
+        <li><strong>Dataset Selection:</strong> Users can choose from multiple datasets to visualize sentiment dynamics.</li>
+        <li><strong>Category Filtering:</strong> Allows filtering by categories such as 'person', 'organization', or 'country'.</li>
+        <li><strong>Sentiment Threshold Sliders:</strong> Users can adjust sliders to set custom thresholds for classifying sentiment as positive or negative.</li>
+      </ul>
+      
       <h3>SentimentStream Tab</h3>
-      <p>The project includes a dedicated tab added to WordStream for sentiment analysis. This visualization provides several features. Firstly, word clouds display key terms with their relative sizes reflecting their prominence within a specific sentiment range. Additionally, temporal trends are integrated with a time slider to observe sentiment changes across different time periods. The visualization also offers interactivity, including adjustable sentiment thresholds (positive, neutral). </p>
-      </section>
+      <p>The <em>SentimentStream</em> tab integrates temporal analysis with sentiment visualization:</p>
+      <ul>
+        <li><strong>Yearly Word Clouds:</strong> For each year, separate word clouds display positive and negative sentiments.</li>
+        <li><strong>Interactive Line Charts:</strong> Clicking on a word generates a line chart showing the sentiment evolution of that word over time.</li>
+        <li><strong>Multiple Category Comparison:</strong> Users can select multiple categories to compare their sentiment trends across different datasets.</li>
+        <li><strong>Adjustable Sentiment Thresholds:</strong> Similar to the WordSentiment tab, allowing dynamic customization of sentiment classification.</li>
+      </ul>
+      
+      <h3>Interactivity and User Configuration</h3>
+      <p>Enhanced interactivity features empower users to explore data insights effectively:</p>
+      <ul>
+        <li><strong>Sliders for Sentiment Thresholds:</strong> Enable users to define what constitutes positive and negative sentiment, allowing for tailored analysis.</li>
+        <li><strong>Diverging Color Schemes:</strong> Provide a nuanced representation of sentiment intensity.</li>
+        <li><strong>Word Interaction:</strong> Clicking on words reveals detailed sentiment trends, facilitating deeper exploration.</li>
+        <li><strong>Dataset Upload:</strong> Users can upload their own datasets through a user-friendly interface, expanding the tool's applicability.</li>
+      </ul>
+      
+      <h3>Mapping Sentiment Scores to Colors</h3>
+      <p>Sentiment scores are visually represented using a diverging color scheme for clarity:</p>
+      <ul>
+        <li><strong>Positive Sentiments:</strong> Mapped to shades of blue, with intensity proportional to the sentiment score.</li>
+        <li><strong>Negative Sentiments:</strong> Mapped to shades of red, similarly scaled.</li>
+        <!-- <li><strong>Neutral Sentiments:</strong> Represented by yellow or gray tones, indicating a lack of strong sentiment.</li> -->
+      </ul>
+    </section>
     <section id="gallery">
       <h2>Gallery</h2>
       <div class="swiper-container">
@@ -93,8 +176,8 @@
     </section>
     <section id="links">
       <h2>Links</h2>
-      <p> <a href="http://dx.doi.org/10.48550/arXiv.2209.11856" target="_blank">Paper</a> </p>
-      <p> <a href="https://github.com/AhmedSabanovic/WordStream-Extension" target="_blank">Code repository</a> </p>
+      <p> <a href="http://dx.doi.org/10.48550/arXiv.2209.11856" target="_blank">Paper (Dang et al. (2019))</a> </p>
+      <p> <a href="https://github.com/AhmedSabanovic/WordStream-Extension" target="_blank">Code (GitHub repository)</a> </p>
     </section>
     <section id="references">
       <h2>References</h2>
