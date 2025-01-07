@@ -50,8 +50,7 @@
     </section>
     <section id="implementation">
       <h2>Implementation</h2>
-      <p> For explanation of the classes and function we created and used, see <a href="http://www.google.com" target="_blank">Code Documentation</a>. </p>
-      <p>The implementation of the <strong>WordStream-Extension</strong> project involved several key components, including data acquisition and preprocessing, extending the existing WordStream visualization, and enhancing interactivity using D3.js. Below is a detailed overview of each aspect:</p>
+      <p>The implementation of the <strong>WordStream-Extension</strong> project involved several key components, including data acquisition and preprocessing, extending the existing WordStream visualization, and enhancing interactivity using D3.js.</p>
       
       <h3>Data Acquisition and Preprocessing</h3>
       <p>We integrated three new datasets into WordStream: Rotten Tomatoes movie reviews, CNN news articles, and Reddit posts from the /datasets subreddit. The preprocessing pipeline for these datasets included:</p>
@@ -67,7 +66,7 @@
       <h3>Extending the WordStream Visualization</h3>
       <p>Building upon the original WordStream tool, we introduced two new visualization tabs: <strong>WordSentiment</strong> and <strong>SentimentStream</strong>.</p>
       
-      <h4>WordSentiment Tab</h4>
+      <!-- <h4>WordSentiment Tab</h4>
       <p>The <em>WordSentiment</em> tab features an interactive word cloud that visualizes the sentiment associated with different keywords. Key functionalities include:</p>
       <ul>
         <li><strong>Sentiment-Based Coloring:</strong> Words are color-coded based on sentiment scores—red for negative, blue for positive, and yellow for neutral.</li>
@@ -79,23 +78,19 @@
       <p>The <em>SentimentStream</em> tab integrates temporal analysis with sentiment visualization, offering deeper insights into sentiment evolution over time. Features include:</p>
       <ul>
         <li><strong>Temporal Word Clouds:</strong> For each selected year, dual word clouds display positive and negative sentiments separately, allowing users to observe sentiment trends over time.</li>
-        <li><strong>Interactive Lines:</strong> Clicking on a word reveals a line chart depicting the evolution of that word's sentiment across different years.</li>
+        <li><strong>Interactive Lines:</strong> Clicking on a word reveals a line chart depicting the evolution of that word's sentiment across different years.</li> -->
         <!-- <li><strong>Composable Categories:</strong> Users can select multiple categories to compare sentiment trends across different groups simultaneously.</li> -->
-      </ul>
+      <!-- </ul> -->
       
-      <h3>Enhancing Interactivity with D3.js</h3>
-      <p>To improve user engagement and interactivity, we leveraged D3.js to implement the following:</p>
-      <ul>
-        <li><strong>Dynamic Sliders:</strong> Interactive sliders for sentiment thresholds and word ranking allow real-time updates to the visualization based on user input.</li>
-        <li><strong>Diverging Color Schemes:</strong> Transitioned from categorical to diverging color schemes to better represent the spectrum of sentiments.</li>
-        <!-- <li><strong>Responsive Design:</strong> Ensured that the visualization adapts seamlessly to different screen sizes and devices, enhancing accessibility.</li> -->
-        <!-- <li><strong>Interactive Legends:</strong> Added clickable legends to allow users to toggle the visibility of specific sentiments or categories.</li> -->
-      </ul>
+      <!-- <h3>Enhancing Interactivity with D3.js</h3> -->
+      <p>To improve user engagement and interactivity, we leveraged D3.js to implement <strong>dynamic sliders</strong> - interactive sliders for sentiment thresholds and word ranking allow real-time updates to the visualization based on user input. And <strong>diverging color schemes</strong> - transitioned from categorical to diverging color schemes to better represent the spectrum of sentiments.</p>
+
+      <p> For explanation of the classes and function we created and used, see <a href="http://www.google.com" target="_blank">Code Documentation</a>. </p>
 
     </section>
     <section id="program">
       <h2>Program</h2>
-      <p>To deploy and interact with the WordStream-Extension, follow the steps below:</p>
+      <!-- <p>To deploy and interact with the WordStream-Extension, follow the steps below:</p> -->
       
       <h3>Running the Application</h3>
       <p>Ensure you have Python installed on your Windows machine. Then, execute the following commands:</p>
@@ -109,13 +104,13 @@
         <li>CNN News Articles</li>
         <li>Reddit Posts from the /datasets Subreddit</li>
       </ul>
-      <p>Each dataset underwent extensive preprocessing, including data cleaning, keyword extraction with SpaCy, sentiment analysis using VADER, and aggregation by year to facilitate temporal visualization.</p>
+      <!-- <p>Each dataset underwent extensive preprocessing, including data cleaning, keyword extraction with SpaCy, sentiment analysis using VADER, and aggregation by year to facilitate temporal visualization.</p>
       <ul>
         <li><strong>Data Cleaning:</strong> Standardized text formats and removed inconsistencies.</li>
         <li><strong>Keyword Extraction:</strong> Identified significant terms to be visualized.</li>
         <li><strong>Sentiment Analysis:</strong> Calculated sentiment scores to categorize words by sentiment.</li>
         <li><strong>Data Aggregation:</strong> Compiled yearly sentiment averages and keyword frequencies.</li>
-      </ul>
+      </ul> -->
       
       <h3>WordSentiment Tab</h3>
       <p>The <em>WordSentiment</em> tab offers an interactive word cloud that visualizes sentiment scores:</p>
@@ -135,16 +130,16 @@
         <li><strong>Adjustable Sentiment Thresholds:</strong> Similar to the WordSentiment tab, allowing dynamic customization of sentiment classification.</li>
       </ul>
       
-      <h3>Interactivity and User Configuration</h3>
+      <!-- <h3>Interactivity and User Configuration</h3>
       <p>Enhanced interactivity features empower users to explore data insights effectively:</p>
       <ul>
         <li><strong>Sliders for Sentiment Thresholds:</strong> Enable users to define what constitutes positive and negative sentiment, allowing for tailored analysis.</li>
         <li><strong>Diverging Color Schemes:</strong> Provide a nuanced representation of sentiment intensity.</li>
         <li><strong>Word Interaction:</strong> Clicking on words reveals detailed sentiment trends, facilitating deeper exploration.</li>
         <li><strong>Dataset Upload:</strong> Users can upload their own datasets through a user-friendly interface, expanding the tool's applicability.</li>
-      </ul>
+      </ul> -->
       
-      <h3>Mapping Sentiment Scores to Colors</h3>
+      <!-- <h3>Mapping Sentiment Scores to Colors</h3> -->
       <p>Sentiment scores are visually represented using a diverging color scheme for clarity:</p>
       <ul>
         <li><strong>Positive Sentiments:</strong> Mapped to shades of blue, with intensity proportional to the sentiment score.</li>
@@ -174,11 +169,18 @@
         <div class="swiper-button-next"></div>
       </div>
     </section>
+
     <section id="links">
       <h2>Links</h2>
       <p> <a href="http://dx.doi.org/10.48550/arXiv.2209.11856" target="_blank">Paper (Dang et al. (2019))</a> </p>
       <p> <a href="https://github.com/AhmedSabanovic/WordStream-Extension" target="_blank">Code (GitHub repository)</a> </p>
+      <p> https://www.kaggle.com/datasets/stefanoleone992/rotten-tomatoes-movies-and-critic-reviews-dataset</p>
+      <p> https://www.kaggle.com/datasets/hadasu92/cnn-articles-after-basic-cleaning</p>
+      <p> https://www.kaggle.com/datasets/pavellexyr/the-reddit-dataset-dataset</p>
+      <p> https://www.kaggle.com/datasets/kashishparmar02/social-media-sentiments-analysis-dataset</p>
+      <p> https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset?resource=download</p>
     </section>
+
     <section id="references">
       <h2>References</h2>
       <p>References used in the project.</p>
