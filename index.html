@@ -61,13 +61,13 @@
         <li><strong>Sentiment Analysis:</strong> Applied the <a href="https://github.com/cjhutto/vaderSentiment" target="_blank">VADER Sentiment Analyzer</a> to compute sentiment scores for each text entry, categorizing sentiments as positive, neutral, or negative.</li>
         <li><strong>Additional data Transformation:</strong> Necessary to visualize the data in the new visualization we built. The data was aggregated data by year, calculating the average sentiment per text and the frequency of each keyword annually to facilitate temporal analysis.</li>
       </ul>
-      <p>Other datasets containing data such as social media posts and fact-check articles were added. However, due to reasons that we were not able to understand, these datasets proved to be difficult to visualize in the WordStream. In order not to waste the effor invested in these datasets, they are only visualizible in the WordSentiment and SentimentStream tabs.</p>
+      <p>Other datasets containing data such as social media posts and fact-check articles were added. However, due to reasons that we were not able to understand, these datasets proved to be difficult to visualize in the WordStream. In order not to waste the effor invested in these datasets, they are only visualizible in the SentimentCloud and SentimentStream tabs.</p>
       
       <h3>Extending the WordStream Visualization</h3>
-      <p>Building upon the original WordStream tool, we introduced two new visualization tabs: <strong>WordSentiment</strong> and <strong>SentimentStream</strong>.</p>
+      <p>Building upon the original WordStream tool, we introduced two new visualization tabs: <strong>SentimentCloud</strong> and <strong>SentimentStream</strong>.</p>
       
-      <!-- <h4>WordSentiment Tab</h4>
-      <p>The <em>WordSentiment</em> tab features an interactive word cloud that visualizes the sentiment associated with different keywords. Key functionalities include:</p>
+      <!-- <h4>SentimentCloud Tab</h4>
+      <p>The <em>SentimentCloud</em> tab features an interactive word cloud that visualizes the sentiment associated with different keywords. Key functionalities include:</p>
       <ul>
         <li><strong>Sentiment-Based Coloring:</strong> Words are color-coded based on sentiment scores—red for negative, blue for positive, and yellow for neutral.</li>
         <li><strong>Dataset and Category Selection:</strong> Users can select from multiple datasets and categories (e.g., person, organization, country) via dropdown menus to customize the visualization.</li>
@@ -112,8 +112,8 @@
         <li><strong>Data Aggregation:</strong> Compiled yearly sentiment averages and keyword frequencies.</li>
       </ul> -->
       
-      <h3>WordSentiment Tab</h3>
-      <p>The <em>WordSentiment</em> tab offers an interactive word cloud that visualizes sentiment scores:</p>
+      <h3>SentimentCloud Tab</h3>
+      <p>The <em>SentimentCloud</em> tab offers an interactive word cloud that visualizes sentiment scores:</p>
       <ul>
         <li><strong>Color-Coded Words:</strong> Red indicates negative sentiment, blue indicates positive sentiment.</li>
         <li><strong>Dataset Selection:</strong> Users can choose from multiple datasets to visualize sentiment dynamics.</li>
@@ -127,7 +127,7 @@
         <li><strong>Yearly Word Clouds:</strong> For each year, separate word clouds display positive and negative sentiments.</li>
         <li><strong>Interactive Line Charts:</strong> Clicking on a word generates a line chart showing the sentiment evolution of that word over time.</li>
         <li><strong>Multiple Category Comparison:</strong> Users can select multiple categories to compare their sentiment trends across different datasets.</li>
-        <li><strong>Adjustable Sentiment Thresholds:</strong> Similar to the WordSentiment tab, allowing dynamic customization of sentiment classification.</li>
+        <li><strong>Adjustable Sentiment Thresholds:</strong> Similar to the SentimentCloud tab, allowing dynamic customization of sentiment classification.</li>
       </ul>
       
       <!-- <h3>Interactivity and User Configuration</h3>
@@ -174,16 +174,15 @@
       <h2>Links</h2>
       <p> <a href="http://dx.doi.org/10.48550/arXiv.2209.11856" target="_blank">Paper (Dang et al. (2019))</a> </p>
       <p> <a href="https://github.com/AhmedSabanovic/WordStream-Extension" target="_blank">Code (GitHub repository)</a> </p>
+    </section>
+
+    <section id="references">
+      <h2>References</h2>
       <p> https://www.kaggle.com/datasets/stefanoleone992/rotten-tomatoes-movies-and-critic-reviews-dataset</p>
       <p> https://www.kaggle.com/datasets/hadasu92/cnn-articles-after-basic-cleaning</p>
       <p> https://www.kaggle.com/datasets/pavellexyr/the-reddit-dataset-dataset</p>
       <p> https://www.kaggle.com/datasets/kashishparmar02/social-media-sentiments-analysis-dataset</p>
       <p> https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset?resource=download</p>
-    </section>
-
-    <section id="references">
-      <h2>References</h2>
-      <p>References used in the project.</p>
     </section>
     <section id="code-documentation">
       <h2>Code Documentation</h2>
