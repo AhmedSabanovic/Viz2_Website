@@ -147,6 +147,137 @@
         <li><code>wordstream</code>, <code>timeline</code>: Adjusts layout and visual effects for the word cloud and timeline.</li>
       </ul>
       
+      <h3>Wordcloud sentiment.html</h3>
+      <p>The <em>Wordcloud sentiment.html</em> file provides the structure and layout for the Sentiment Cloud visualization within the WordStream-Extension project. It includes the necessary HTML elements, external libraries, and custom scripts to render and interact with the sentiment word cloud.</p>
+
+      <!-- <h4>Key Elements</h4> -->
+      <ul>
+        <li><code>&lt;div class="title"&gt;</code>: Navigation bar with links to different sections of the WordStream application.</li>
+        <li><code>&lt;div class="container"&gt;</code>: Main container that holds the sidebar and visualization sections.</li>
+        <li><code>&lt;div class="sidebar"&gt;</code>: Sidebar containing control elements for dataset selection, category filtering, and threshold adjustments.</li>
+        <li><code>&lt;div class="visualization"&gt;</code>: Container for the word cloud visualization and legend.</li>
+        <li><code>&lt;div id="wordcloud" class="wordcloud"&gt;</code>: Element where the word cloud is rendered.</li>
+        <li><code>&lt;div id="yearSlider" class="slider"&gt;</code>: Slider for selecting the year range.</li>
+        <li><code>&lt;div id="positiveThreshold" class="slider"&gt;</code>: Slider for adjusting the positive sentiment threshold.</li>
+        <li><code>&lt;div id="negativeThreshold" class="slider"&gt;</code>: Slider for adjusting the negative sentiment threshold.</li>
+      </ul>
+
+      <!-- <h4>External Libraries</h4> -->
+      <ul>
+        <li><code>d3.v7.min.js</code>: D3.js library for creating data-driven visualizations.</li>
+        <li><code>d3-scale-chromatic.v1.min.js</code>: D3.js module for color scales.</li>
+        <li><code>d3.layout.cloud.min.js</code>: D3.js layout for word clouds.</li>
+        <li><code>jquery-1.9.0.min.js</code>: jQuery library for DOM manipulation.</li>
+        <li><code>jquery-ui.min.js</code>: jQuery UI for interactive elements.</li>
+        <li><code>nouislider.min.js</code>: noUiSlider library for creating sliders.</li>
+      </ul>
+
+      <!-- <h4>Custom Scripts and Styles</h4> -->
+      <ul>
+        <li><code>wmain.js</code>: Custom JavaScript for handling the functionality and interactivity of the Sentiment Cloud visualization.</li>
+        <li><code>wstyles.css</code>: Custom CSS for styling the Sentiment Cloud visualization and its components.</li>
+      </ul>
+      
+      <h3>Wmain.js</h3>
+      <p>The <em>Wmain.js</em> script manages the functionality and interactivity of the Sentiment Cloud visualization within the WordStream-Extension project. It handles data loading, filtering, and rendering of the word cloud based on sentiment analysis.</p>
+
+      <!-- <h4>Global Variables</h4> -->
+      <ul>
+        <li><code>words</code>: Array to store processed word data.</li>
+        <li><code>width</code> and <code>height</code>: Dimensions of the visualization canvas.</li>
+        <li><code>minFontSize</code> and <code>maxFontSize</code>: Font size range for words in the word cloud.</li>
+        <li><code>yearRange</code>: Object to store the minimum and maximum years in the dataset.</li>
+        <li><code>selectedCategories</code>: Array of categories selected for filtering words.</li>
+      </ul>
+
+      <!-- <h4>Color Scale</h4> -->
+      <ul>
+        <li><code>colorScale</code>: D3 sequential color scale for mapping sentiment scores to colors.</li>
+      </ul>
+
+      <!-- <h4>Word Cloud Layouts</h4> -->
+      <ul>
+        <li><code>layoutPositive</code>: D3 layout for the positive sentiment word cloud.</li>
+        <li><code>layoutNegative</code>: D3 layout for the negative sentiment word cloud.</li>
+      </ul>
+
+      <!-- <h4>Draw Functions</h4> -->
+      <ul>
+        <li><code>drawPositive(words)</code>: Renders the positive sentiment word cloud.</li>
+        <li><code>drawNegative(words)</code>: Renders the negative sentiment word cloud.</li>
+      </ul>
+
+      <!-- <h4>Slider Initialization</h4> -->
+      <ul>
+        <li><code>initializeSliders()</code>: Initializes the year, positive threshold, and negative threshold sliders using noUiSlider.</li>
+      </ul>
+
+      <!-- <h4>Filter Update</h4> -->
+      <ul>
+        <li><code>updateFilters()</code>: Filters words based on selected year and sentiment thresholds, then updates the word clouds.</li>
+      </ul>
+
+      <!-- <h4>Data Loading and Processing</h4> -->
+      <ul>
+        <li><code>loadData(dataset)</code>: Loads and processes the selected dataset, updating the word cloud and category selector.</li>
+      </ul>
+
+      <!-- <h4>Category Selector Update</h4> -->
+      <ul>
+        <li><code>updateCategorySelector(categories)</code>: Updates the category selector dropdown based on available categories in the dataset.</li>
+      </ul>
+
+      <!-- <h4>Initialization</h4> -->
+      <ul>
+        <li><code>init()</code>: Initializes the visualization, sets up event listeners, and loads the initial dataset.</li>
+      </ul>
+
+      <!-- <h4>Event Listeners</h4>
+      <ul>
+        <li>Event listeners for sliders and dropdowns to handle user interactions and update the visualization accordingly.</li>
+      </ul>
+
+      <h4>DOM Content Loaded</h4>
+      <ul>
+        <li>Starts the visualization initialization when the DOM content is fully loaded.</li>
+      </ul> -->
+      
+      <h3>wstyles.css</h3>
+      <p>The <em>wstyles.css</em> file provides the styling for the Sentiment Cloud visualization within the WordStream-Extension project. It ensures a cohesive and visually appealing user interface by defining styles for various elements and components.</p>
+
+      <!-- <h4>Key Classes and Selectors</h4> -->
+      <ul>
+        <li><code>.container</code>: Styles the main container, using flexbox for layout and spacing.</li>
+        <li><code>.sidebar</code>: Styles the sidebar, including padding, background color, border, and height.</li>
+        <li><code>.control-group</code>: Styles control groups within the sidebar, including layout, margin, and padding.</li>
+        <li><code>#datasetSelector, #categorySelector</code>: Styles the dataset and category dropdown selectors.</li>
+        <li><code>.slider</code>: Styles the sliders for year and sentiment thresholds.</li>
+        <li><code>.noUi-target, .noUi-horizontal, .noUi-connect, .noUi-handle, .noUi-tooltip</code>: Styles for the noUiSlider components, including track, handle, and tooltips.</li>
+        <li><code>.visualization</code>: Styles the visualization container, ensuring it flexes to fill available space.</li>
+        <li><code>.wordcloud</code>: Styles the word cloud container, including dimensions, border, and position.</li>
+        <li><code>.word</code>: Styles individual words in the word cloud, including cursor and hover effects.</li>
+        <li><code>.title</code>: Styles the title bar, including padding.</li>
+        <li><code>.button</code>: Styles navigation buttons, including padding, margin, border, and active state.</li>
+        <li><code>.legend</code>: Styles the legend container, including layout, background, border, and shadow.</li>
+        <li><code>.legend div</code>: Styles individual legend items, including dimensions, text alignment, and background colors for positive and negative sentiments.</li>
+        <li><code>.middle-line</code>: Styles the middle line in the word cloud, indicating separation between positive and negative sentiments.</li>
+      </ul>
+      
+      <h3>Data Folder</h3>
+      <p>The <code>/data</code> folder contains all datasets used for the WordStream-Extension, along with scripts for preprocessing the data.</p>
+      
+      <!-- <h4>Preprocess Folder</h4> -->
+      <p>The <code>/data/preprocess</code> directory includes Python scripts responsible for cleaning, processing, and preparing raw data for visualization. Each script contains the name of the dataset it preprocesses, the original datasets can be found in <code>/data/raw.</code> </p>
+      
+      <p>We integrated three new datasets into WordStream: Rotten Tomatoes movie reviews, CNN news articles, and Reddit posts from the /datasets subreddit. The preprocessing pipeline for these datasets included:</p>
+      <ul>
+        <li><strong>Data Collection:</strong> Acquired datasets from trusted sources, ensuring a diverse range of text corpora.</li>
+        <li><strong>Data Cleaning:</strong> Performed text normalization, including lowercasing, removal of special characters, and handling of missing values to ensure consistency across datasets.</li>
+        <li><strong>Keyword Extraction:</strong> Utilized the <a href="https://spacy.io/" target="_blank">SpaCy</a> library in Python to extract relevant keywords from each dataset, enhancing the quality of the visualization.</li>
+        <li><strong>Sentiment Analysis:</strong> Applied the <a href="https://github.com/cjhutto/vaderSentiment" target="_blank">VADER Sentiment Analyzer</a> to compute sentiment scores for each text entry, categorizing sentiments as positive, neutral, or negative.</li>
+        <li><strong>Additional data Transformation:</strong> Necessary to visualize the data in the new visualization we built. The data was aggregated data by year, calculating the average sentiment per text and the frequency of each keyword annually to facilitate temporal analysis.</li>
+      </ul>
+      <p>Other datasets containing data such as social media posts and fact-check articles were added. However, due to reasons that we were not able to understand, these datasets proved to be difficult to visualize in the WordStream. In order not to waste the effort invested in these datasets, they are only visualizible in the SentimentCloud and SentimentStream tabs.</p>
       
     </section>
   </div>
