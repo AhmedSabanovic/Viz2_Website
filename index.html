@@ -4,7 +4,6 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>WordStream-Extension</title>
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
@@ -13,20 +12,18 @@
     <div class="hero-content">
       <h1>WordStream-Extension</h1>
       <p>Take your analysis to the next level</p>
-      <a href="#about" class="btn">Learn More</a>
+      <a href="#Description" class="btn">Learn More</a>
     </div>
   </section>
   <header>
     <nav>
       <ul>
-        <li><a href="#about">About</a></li>
-        <!-- <li><a href="#github">GitHub</a></li> -->
         <li><a href="#paper">Paper</a></li>
         <li><a href="#implementation">Implementation</a></li>
         <li><a href="#program">Program</a></li>
-        <li><a href="#gallery">Gallery</a></li>
         <li><a href="#links">Links</a></li>
         <li><a href="#references">References</a></li>
+        <li><a href="doc.html">Code Documentation</a></li> 
       </ul>
     </nav>
   </header>
@@ -37,8 +34,8 @@
       <p>This extension enhances WordStream’s capabilities by incorporating sentiment analysis, allowing users to:</p>
       <ul>
         <li>Explore how sentiment associated with topics changes over time.</li>
-          <li>Compare sentiment trends across multiple categories or datasets.</li>
-          <li>Gain deeper insights into text-heavy datasets, such as news articles, social media posts, and other temporal data sources.</li>
+        <li>Compare sentiment trends across multiple categories or datasets.</li>
+        <li>Gain deeper insights into text-heavy datasets, such as news articles, social media posts, and other temporal data sources.</li>
       </ul>
     </section>
     <section id="paper">
@@ -66,23 +63,7 @@
       <h3>Extending the WordStream Visualization</h3>
       <p>Building upon the original WordStream tool, we introduced two new visualization tabs: <strong>SentimentCloud</strong> and <strong>SentimentStream</strong>.</p>
       
-      <!-- <h4>SentimentCloud Tab</h4>
-      <p>The <em>SentimentCloud</em> tab features an interactive word cloud that visualizes the sentiment associated with different keywords. Key functionalities include:</p>
-      <ul>
-        <li><strong>Sentiment-Based Coloring:</strong> Words are color-coded based on sentiment scores—red for negative, blue for positive, and yellow for neutral.</li>
-        <li><strong>Dataset and Category Selection:</strong> Users can select from multiple datasets and categories (e.g., person, organization, country) via dropdown menus to customize the visualization.</li>
-        <li><strong>Threshold Sliders:</strong> Two sliders allow users to adjust sentiment score thresholds, enabling fine-tuning of what constitutes positive and negative sentiments.</li>
-      </ul>
-      
-      <h4>SentimentStream Tab</h4>
-      <p>The <em>SentimentStream</em> tab integrates temporal analysis with sentiment visualization, offering deeper insights into sentiment evolution over time. Features include:</p>
-      <ul>
-        <li><strong>Temporal Word Clouds:</strong> For each selected year, dual word clouds display positive and negative sentiments separately, allowing users to observe sentiment trends over time.</li>
-        <li><strong>Interactive Lines:</strong> Clicking on a word reveals a line chart depicting the evolution of that word's sentiment across different years.</li> -->
-        <!-- <li><strong>Composable Categories:</strong> Users can select multiple categories to compare sentiment trends across different groups simultaneously.</li> -->
-      <!-- </ul> -->
-      
-      <!-- <h3>Enhancing Interactivity with D3.js</h3> -->
+      <h3>Enhancing Interactivity with D3.js</h3>
       <p>To improve user engagement and interactivity, we leveraged D3.js to implement <strong>dynamic sliders</strong> - interactive sliders for sentiment thresholds and word ranking allow real-time updates to the visualization based on user input. And <strong>diverging color schemes</strong> - transitioned from categorical to diverging color schemes to better represent the spectrum of sentiments.</p>
 
       <p> For explanation of the classes and function we created and used, see <a href="http://www.google.com" target="_blank">Code Documentation</a>. </p>
@@ -90,7 +71,6 @@
     </section>
     <section id="program">
       <h2>Program</h2>
-      <!-- <p>To deploy and interact with the WordStream-Extension, follow the steps below:</p> -->
       
       <h3>Running the Application</h3>
       <p>Ensure you have Python installed on your Windows machine. Then, execute the following commands:</p>
@@ -104,13 +84,14 @@
         <li>CNN News Articles</li>
         <li>Reddit Posts from the /datasets Subreddit</li>
       </ul>
-      <!-- <p>Each dataset underwent extensive preprocessing, including data cleaning, keyword extraction with SpaCy, sentiment analysis using VADER, and aggregation by year to facilitate temporal visualization.</p>
+      <img src="Datasets.gif" alt="Datasets GIF" />
+      <p>Each dataset underwent extensive preprocessing, including data cleaning, keyword extraction with SpaCy, sentiment analysis using VADER, and aggregation by year to facilitate temporal visualization.</p>
       <ul>
         <li><strong>Data Cleaning:</strong> Standardized text formats and removed inconsistencies.</li>
         <li><strong>Keyword Extraction:</strong> Identified significant terms to be visualized.</li>
         <li><strong>Sentiment Analysis:</strong> Calculated sentiment scores to categorize words by sentiment.</li>
         <li><strong>Data Aggregation:</strong> Compiled yearly sentiment averages and keyword frequencies.</li>
-      </ul> -->
+      </ul>
       
       <h3>SentimentCloud Tab</h3>
       <p>The <em>SentimentCloud</em> tab offers an interactive word cloud that visualizes sentiment scores:</p>
@@ -120,7 +101,8 @@
         <li><strong>Category Filtering:</strong> Allows filtering by categories such as 'person', 'organization', or 'country'.</li>
         <li><strong>Sentiment Threshold Sliders:</strong> Users can adjust sliders to set custom thresholds for classifying sentiment as positive or negative.</li>
       </ul>
-      
+      <img src="Sentiment Cloud.gif" alt="SentimentCloud GIF" />
+
       <h3>SentimentStream Tab</h3>
       <p>The <em>SentimentStream</em> tab integrates temporal analysis with sentiment visualization:</p>
       <ul>
@@ -129,45 +111,12 @@
         <li><strong>Multiple Category Comparison:</strong> Users can select multiple categories to compare their sentiment trends across different datasets.</li>
         <li><strong>Adjustable Sentiment Thresholds:</strong> Similar to the SentimentCloud tab, allowing dynamic customization of sentiment classification.</li>
       </ul>
-      
-      <!-- <h3>Interactivity and User Configuration</h3>
-      <p>Enhanced interactivity features empower users to explore data insights effectively:</p>
-      <ul>
-        <li><strong>Sliders for Sentiment Thresholds:</strong> Enable users to define what constitutes positive and negative sentiment, allowing for tailored analysis.</li>
-        <li><strong>Diverging Color Schemes:</strong> Provide a nuanced representation of sentiment intensity.</li>
-        <li><strong>Word Interaction:</strong> Clicking on words reveals detailed sentiment trends, facilitating deeper exploration.</li>
-        <li><strong>Dataset Upload:</strong> Users can upload their own datasets through a user-friendly interface, expanding the tool's applicability.</li>
-      </ul> -->
-      
-      <!-- <h3>Mapping Sentiment Scores to Colors</h3> -->
       <p>Sentiment scores are visually represented using a diverging color scheme for clarity:</p>
       <ul>
         <li><strong>Positive Sentiments:</strong> Mapped to shades of blue, with intensity proportional to the sentiment score.</li>
         <li><strong>Negative Sentiments:</strong> Mapped to shades of red, similarly scaled.</li>
-        <!-- <li><strong>Neutral Sentiments:</strong> Represented by yellow or gray tones, indicating a lack of strong sentiment.</li> -->
+        
       </ul>
-    </section>
-    <section id="gallery">
-      <h2>Gallery</h2>
-      <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="Concept.png" alt="Concept Image"/>
-          </div>
-          <div class="swiper-slide">
-            <img src="Concept.gif" alt="Concept GIF"/>
-          </div>
-          <!-- <div class="swiper-slide">
-            <img src="Concept.png" alt="Concept Image"/>
-          </div>
-          <div class="swiper-slide">
-            <img src="Concept.png" alt="Concept Image"/>
-          </div> -->
-        </div>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-      </div>
     </section>
 
     <section id="links">
@@ -184,131 +133,12 @@
       <p> https://www.kaggle.com/datasets/kashishparmar02/social-media-sentiments-analysis-dataset</p>
       <p> https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset?resource=download</p>
     </section>
-    <section id="code-documentation">
-      <h2>Code Documentation</h2>
-      <p>This section provides an overview of the key classes and functions implemented in the <strong>WordStream-Extension</strong> project. The documentation covers the primary files essential for the extension, including their roles and functionalities.</p>
-      
-      <h3>Sentiment.html</h3>
-      <p>The <em>Sentiment.html</em> file serves as the HTML structure for the Sentiment Analysis tab within the WordStream-Extension. It defines the layout and elements necessary for rendering sentiment-based visualizations.</p>
-      
-      <h4>Classes and IDs</h4>
-      <ul>
-        <li><code>.sentiment-container</code>: Wrapper div that encapsulates all sentiment visualization components.</li>
-        <li><code>#sentimentWordCloud</code>: SVG element where the word cloud visualization is rendered.</li>
-        <li><code>#sentimentControls</code>: Container for interactive controls such as sliders and dropdowns.</li>
-        <li><code>.slider</code>: Class assigned to slider elements for adjusting sentiment thresholds.</li>
-      </ul>
-      
-      <h4>Functions</h4>
-      <ul>
-        <li><code>initializeSentimentVisualization()</code>: Initializes the sentiment word cloud and sets up interactive controls.</li>
-        <li><code>updateSentimentWordCloud()</code>: Updates the word cloud based on user-adjusted sentiment thresholds.</li>
-        <li><code>handleCategorySelection()</code>: Manages category selection changes and updates the visualization accordingly.</li>
-      </ul>
-      
-      <h3>smain.js</h3>
-      <p>The <em>smain.js</em> script handles the functionality and interactivity of the Sentiment Analysis tab. It leverages D3.js for rendering visualizations and manages user interactions.</p>
-      
-      <h4>Classes</h4>
-      <ul>
-        <li><code>SentimentWordCloud</code>: Encapsulates methods for creating and updating the sentiment word cloud visualization.</li>
-        <li><code>SentimentControls</code>: Manages the initialization and event handling of interactive controls like sliders and dropdowns.</li>
-      </ul>
-      
-      <h4>Functions</h4>
-      <ul>
-        <li><code>SentimentWordCloud.render(data)</code>: Renders the word cloud based on the provided sentiment data.</li>
-        <li><code>SentimentWordCloud.update(data)</code>: Updates the existing word cloud with new data parameters.</li>
-        <li><code>SentimentControls.initSliders()</code>: Initializes sentiment threshold sliders with default values.</li>
-        <li><code>SentimentControls.attachEventListeners()</code>: Attaches event listeners to interactive controls to handle user input.</li>
-      </ul>
-      
-      <h3>sstyles.css</h3>
-      <p>The <em>sstyles.css</em> file defines the styling for the Sentiment Analysis tab, ensuring a cohesive and visually appealing user interface.</p>
-      
-      <h4>Key Classes and Selectors</h4>
-      <ul>
-        <li><code>.sentiment-container</code>: Styles the main container of the sentiment visualization, including layout and spacing.</li>
-        <li><code>#sentimentWordCloud</code>: Sets dimensions, borders, and background for the word cloud SVG.</li>
-        <li><code>.slider</code>: Styles slider elements, including track, handle, and labels.</li>
-        <li><code>#sentimentControls</code>: Arranges control elements using flexbox for responsive design.</li>
-        <li><code>.btn</code>: Styles buttons within the sentiment controls for consistency with the overall theme.</li>
-      </ul>
-      
-      <h3>Wordstream sentiment.html</h3>
-      <p>The <em>Wordstream sentiment.html</em> file integrates the sentiment analysis features into the main WordStream application, allowing seamless navigation between different visualization tabs.</p>
-      
-      <h4>Classes and IDs</h4>
-      <ul>
-        <li><code>#wordstreamSentimentTab</code>: Section dedicated to the sentiment analysis visualization.</li>
-        <li><code>.tab-content</code>: Common class for styling content within each tab.</li>
-        <li><code>.active-tab</code>: Indicates the currently active tab for user navigation.</li>
-      </ul>
-      
-      <h4>Functions</h4>
-      <ul>
-        <li><code>switchToSentimentTab()</code>: Handles the transition from other tabs to the Sentiment Analysis tab.</li>
-        <li><code>loadSentimentData()</code>: Loads and preprocesses sentiment data for visualization.</li>
-      </ul>
-      
-      <h3>Wmain.js</h3>
-      <p>The <em>Wmain.js</em> script manages the overall functionality of the Wordstream Sentiment tab, coordinating data loading, visualization rendering, and user interactions.</p>
-      
-      <h4>Classes</h4>
-      <ul>
-        <li><code>WordstreamSentiment</code>: Central class that initializes and manages all aspects of the sentiment visualization.</li>
-        <li><code>DataLoader</code>: Handles data fetching, preprocessing, and preparation for visualization.</li>
-      </ul>
-      
-      <h4>Functions</h4>
-      <ul>
-        <li><code>WordstreamSentiment.init()</code>: Sets up the visualization environment, including SVG canvases and control panels.</li>
-        <li><code>WordstreamSentiment.renderVisualization()</code>: Renders the sentiment word clouds and stream visualizations based on processed data.</li>
-        <li><code>DataLoader.fetchData(dataset)</code>: Retrieves data from the specified dataset for analysis.</li>
-        <li><code>DataLoader.preprocessData(rawData)</code>: Cleans and formats raw data, performing sentiment analysis and keyword extraction.</li>
-      </ul>
-      
-      <h3>wstyle.css</h3>
-      <p>The <em>wstyle.css</em> file provides styling specific to the Wordstream Sentiment visualization, ensuring that the sentiment features are both functional and aesthetically aligned with the original WordStream design.</p>
-      
-      <h4>Key Classes and Selectors</h4>
-      <ul>
-        <li><code>#wordstreamSentimentTab</code>: Styles the sentiment tab section, including layout and background properties.</li>
-        <li><code>.sentiment-word</code>: Defines the appearance of individual words in the sentiment word cloud, including font size, color based on sentiment, and hover effects.</li>
-        <li><code>.sentiment-slider</code>: Styles sliders used for adjusting sentiment thresholds, including track and handle designs.</li>
-        <li><code>.sentiment-button</code>: Styles buttons within the sentiment controls for actions like submission and reset.</li>
-        <li><code>.sentiment-line-chart</code>: Styles the line charts that display sentiment evolution over time, including axes, lines, and tooltips.</li>
-      </ul>
-      
-      <h3>Data Folder</h3>
-      <p>The <code>/data</code> folder contains all datasets used for the WordStream-Extension, along with scripts for preprocessing the data.</p>
-      
-      <h4>Preprocess Folder</h4>
-      <p>The <code>/data/preprocess</code> directory includes Python scripts responsible for cleaning, processing, and preparing raw data for visualization.</p>
-      
-      <h4>Key Scripts</h4>
-      <ul>
-        <li><code>clean_data.py</code>: Performs text normalization, removal of special characters, and handles missing values to ensure data consistency.</li>
-        <li><code>extract_keywords.py</code>: Utilizes SpaCy to extract significant keywords from each dataset, enhancing the relevance of the visualizations.</li>
-        <li><code>sentiment_analysis.py</code>: Applies VADER Sentiment Analyzer to compute sentiment scores for each text entry, categorizing them into positive, neutral, or negative sentiments.</li>
-        <li><code>aggregate_data.py</code>: Aggregates data by year, calculating average sentiment scores and keyword frequencies to facilitate temporal analysis.</li>
-        <li><code>handle_noisy_data.py</code>: Implements noise reduction techniques to manage and clean noisy or incomplete data from sources like social media posts.</li>
-      </ul>
-      
-      <h4>Function Descriptions</h4>
-      <ul>
-        <li><code>clean_data(input_path, output_path)</code>: Cleans the raw data file by normalizing text and removing inconsistencies.</li>
-        <li><code>extract_keywords(text)</code>: Extracts relevant keywords from the provided text using NLP techniques.</li>
-        <li><code>analyze_sentiment(text)</code>: Calculates the sentiment score for the given text and classifies it accordingly.</li>
-        <li><code>aggregate_by_year(data)</code>: Groups the data by year and computes aggregate sentiment scores and keyword frequencies.</li>
-        <!-- <li><code>reduce_noise(data)</code>: Applies filtering and normalization to minimize the impact of noisy data entries.</li> -->
-      </ul>
-    </section>
+    <h2>Code Documentation</h2>
+    <p> <a href="doc.html">Code Documentation</a> </p>
   </main>
   <footer>
-    <p>&copy; 2024 WordStream-Extension</p>
+    <p>&copy; 2024/2025 WordStream-Extension</p>
   </footer>
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="scripts.js"></script>
 </body>
 </html>
