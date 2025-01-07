@@ -31,43 +31,22 @@
     </nav>
   </header>
   <main>
-    <!-- <section id="about">
-      <h2>About the Project</h2>
-      <div class="about-content">
-        <h3>Updates</h3>
-        <ul>
-          <li><strong>New Datasets Added</strong>: Two datasets have been integrated:
-            <ul>
-              <li><strong>RealNews</strong>: From the <a href="https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset?resource=download" target="_blank">Fake and Real News Dataset</a>.</li>
-              <li><strong>CNN_Articles</strong>: From <a href="https://www.kaggle.com/datasets/hadasu92/cnn-articles-after-basic-cleaning" target="_blank">CNN Articles</a>.</li>
-            </ul>
-          </li>
-          <li><strong>Bug Fixes</strong>: Various performance improvements.</li>
-          <li><strong>Sentiment Analysis Tab</strong>: Currently a placeholder.</li>
-          <li><strong>Test Version</strong>: A preview for new features.</li>
-        </ul>
-        <h4>Sentiment Analysis Test Dataset:</h4>
-        <p>Color-coding for sentiment:</p>
-        <ul>
-          <li><span class="sentiment-neutral">Orange</span> = Neutral</li>
-          <li><span class="sentiment-negative">Red</span> = Negative</li>
-          <li><span class="sentiment-positive">Green</span> = Positive</li>
-        </ul>
-        <p>These colors provide a quick overview of news tone.</p>
-        <hr/>
-        <h3>Running the Program</h3>
-        <p>Use a simple server, e.g.:</p>
-        <pre><code>python -m http.server 8000</code></pre>
-      </div>
-    </section> -->
-    <!-- <section id="github">
-      <h2>GitHub Repository</h2>
-      <p>View the project on <a href="https://github.com/AhmedSabanovic/WordStream-Extension" target="_blank">GitHub</a>.</p>
-    </section> -->
-    <!-- New Sections -->
+    <section id="Description">
+      <h2>Description</h2>
+      <p>The <strong>WordStream Sentiment Analysis Visualization</strong> is an extension of the original WordStream tool, developed as part of the Visualization 2 course project. This project introduces a new tab to WordStream dedicated to sentiment analysis, which combines word cloud visualization with temporal analysis. The extension supports multiple datasets, interactive features, and customizable parameters to analyze and explore the evolution of sentiment over time.</p>
+      <p>This extension enhances WordStream’s capabilities by incorporating sentiment analysis, allowing users to:</p>
+      <ul>
+        <li>Explore how sentiment associated with topics changes over time.</li>
+          <li>Compare sentiment trends across multiple categories or datasets.</li>
+          <li>Gain deeper insights into text-heavy datasets, such as news articles, social media posts, and other temporal data sources.</li>
+      </ul>
+    </section>
     <section id="paper">
       <h2>Paper</h2>
-      <p>Details about the paper.</p>
+      <p><strong>"WordStream"</strong> by Dang et al. (2019) presents an innovative interactive visualization tool for analyzing and illustrating the evolution of topics over time. It synthesizes two popular techniques, <strong>word clouds</strong> and <strong>stacked graphs</strong>, to create a hybrid visualization method that provides both temporal and spatial insights into text data. The tool is evaluated on datasets like political blogs, news articles, and academic publications.</p>
+      <p>The key contributions of the "WordStream" paper include the development of a hybrid visualization method that combines word clouds and stacked graphs. Word clouds represent important terms with varying font sizes based on frequency or significance, while stacked graphs depict temporal trends of topics, with stream layers representing the evolution of topic significance over time. The integration of word clouds within stream layers optimizes space usage and visually links terms to their corresponding time periods. </p>
+      <p>The design and implementation of the tool were carried out as an interactive prototype using D3.js, enabling users to explore topic trends dynamically. A space-sharing approach was introduced to maximize term placement efficiency while preserving the temporal context, and the tool allows customization of visual settings such as font scaling, number of displayed terms, and layout dimensions. The algorithms include a spiral placement algorithm for terms within stream layers, ensuring compactness and collision avoidance, with terms arranged to reflect their temporal context and stream orientation, providing an intuitive flow. </p>
+      <p> The evaluation of the tool involved quantitative metrics, such as compactness (coverage efficiency of terms within layers), to assess layout quality across datasets, and qualitative feedback from informal studies with domain experts, highlighting the tool’s usability for longitudinal trend analysis and its limitations in handling highly cluttered streams or showing term relationships explicitly.</p>
     </section>
     <section id="implementation">
       <h2>Implementation</h2>
@@ -75,11 +54,21 @@
     </section>
     <section id="program">
       <h2>Program</h2>
-      <p>Details about the program.</p>
-      <p> ...</p>
-      <p> To run the program, use a simple server, e.g.:</p>
+      <p> To run the program, open the command line, navigate to the program folder, and use a simple server, e.g.:</p>
         <pre><code>python -m http.server 8000</code></pre>
-    </section>
+        <h3>Additional datasets</h3>
+        <p>We enriched the original WordStream with several new datasets: </p>
+        <ul>
+          <li>Rotten Tomatoes movie reviews</li>
+          <li>CNN News articles</li>
+          <li>Reddit posts</li>
+        </ul>
+        <p> ... explain content of the datasets, preprocessing, etc. </p>
+      <h3>WordSentiment Tab</h3>
+      <p> ... </p>
+      <h3>SentimentStream Tab</h3>
+      <p>The project includes a dedicated tab added to WordStream for sentiment analysis. This visualization provides several features. Firstly, word clouds display key terms with their relative sizes reflecting their prominence within a specific sentiment range. Additionally, temporal trends are integrated with a time slider to observe sentiment changes across different time periods. The visualization also offers interactivity, including adjustable sentiment thresholds (positive, neutral). </p>
+      </section>
     <section id="gallery">
       <h2>Gallery</h2>
       <div class="swiper-container">
@@ -104,8 +93,8 @@
     </section>
     <section id="links">
       <h2>Links</h2>
-      <!-- <p>Relevant links.</p> -->
-      <p> <a href="https://github.com/AhmedSabanovic/WordStream-Extension" target="_blank">GitHub</a> </p>
+      <p> <a href="http://dx.doi.org/10.48550/arXiv.2209.11856" target="_blank">Paper</a> </p>
+      <p> <a href="https://github.com/AhmedSabanovic/WordStream-Extension" target="_blank">Code repository</a> </p>
     </section>
     <section id="references">
       <h2>References</h2>
